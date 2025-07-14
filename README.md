@@ -45,29 +45,24 @@ src/
 ├── App.js
 ├── index.js
 
-yaml
-Copy
-Edit
-
----
 
 ## How to Run
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone https://github.com/your-username/url-shortener-app.git
 cd url-shortener-app
+```
 2. Install Dependencies
-bash
-Copy
-Edit
+```
 npm install
+```
 3. Start the Development Server
-bash
-Copy
-Edit
+```
 npm start
+```
+ 
 Application will run on: http://localhost:3000
 
 Usage Guide
@@ -88,7 +83,7 @@ View all generated shortened URLs
 
 See number of clicks, creation/expiry times, and full click history
 
-Technical Highlights
+## Technical Highlights
 React + React Router DOM for SPA routing
 
 All business logic handled in-browser
@@ -101,14 +96,14 @@ Input validation for URL, validity, and shortcode
 
 Default validity set to 30 minutes if not specified
 
-Data Storage Format
+## Data Storage Format
 Data is stored in localStorage:
 
 shortenedUrls: array of { originalUrl, shortUrl, createdAt, expiresAt, clicks }
 
 clickLogs: object mapping shortcode to click metadata array
 
-Author
+## Author
 Name: Kola Keerthi Kumar
 
 Project: Frontend Mini Project (Campus Evaluation)
