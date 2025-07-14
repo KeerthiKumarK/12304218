@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+ # React URL Shortener Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully client-side URL Shortener application built using React. This project allows users to shorten long URLs with optional expiry times and custom shortcodes, track clicks on shortened links, and view basic analytics — all without requiring a backend.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Client-side only — No backend required
+- Shorten up to 5 URLs at once with:
+  - Optional expiry time (in minutes)
+  - Optional custom shortcode
+- Redirection handled using React Router (/:shortcode)
+- Statistics tracking:
+  - Total clicks per short link
+  - Timestamp, source, and location (mocked)
+- Auto-expiry after provided time or 30 minutes by default
+- Data stored in localStorage
+- Clean and user-friendly UI (pure CSS based styling)
+- Custom logger middleware used (no console.log)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+src/
+├── components/
+│ ├── UrlInputForm.jsx
+│ ├── ShortenedUrlCard.jsx
+│
+├── pages/
+│ ├── Home.jsx
+│ ├── Stats.jsx
+│ ├── Redirect.jsx
+│
+├── utils/
+│ ├── storage.js
+│ ├── logger.js
+│ ├── validators.js
+│ ├── shortener.js
+│
+├── styles/
+│ ├── App.css
+│
+├── App.js
+├── index.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+yaml
+Copy
+Edit
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to Run
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/your-username/url-shortener-app.git
+cd url-shortener-app
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Start the Development Server
+bash
+Copy
+Edit
+npm start
+Application will run on: http://localhost:3000
 
-### `npm run eject`
+Usage Guide
+Home Page (/)
+Add up to 5 URLs with optional expiry time and custom shortcode
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Press "Shorten URLs" to generate shortened links
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+View and copy the shortened URLs along with creation and expiry info
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Redirection (/:shortcode)
+Visiting a shortened URL like http://localhost:3000/xyz123 redirects to the original URL
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Click is logged with mock timestamp, source, and location
 
-## Learn More
+Statistics Page (/stats)
+View all generated shortened URLs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+See number of clicks, creation/expiry times, and full click history
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Technical Highlights
+React + React Router DOM for SPA routing
 
-### Code Splitting
+All business logic handled in-browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+localStorage used for storing URLs and analytics
 
-### Analyzing the Bundle Size
+Unique shortcodes auto-generated (6 characters)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Input validation for URL, validity, and shortcode
 
-### Making a Progressive Web App
+Default validity set to 30 minutes if not specified
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Data Storage Format
+Data is stored in localStorage:
 
-### Advanced Configuration
+shortenedUrls: array of { originalUrl, shortUrl, createdAt, expiresAt, clicks }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+clickLogs: object mapping shortcode to click metadata array
 
-### Deployment
+Author
+Name: Kola Keerthi Kumar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Project: Frontend Mini Project (Campus Evaluation)
 
-### `npm run build` fails to minify
+Stack: React, JavaScript, CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Date: July 2025
+
+License
+This project is intended for educational purposes and academic evaluation only.
+All rights reserved.
+
+ 
+
+---
+
+Screenshots
+
+<img width="1221" height="961" alt="image" src="https://github.com/user-attachments/assets/3f3dcffb-2291-46fd-a143-810af7f084d7" />
