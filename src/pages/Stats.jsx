@@ -1,4 +1,4 @@
-// src/pages/Stats.jsx
+ 
 import React, { useEffect, useState } from 'react';
 import StatsTable from '../components/StatsTable';
 

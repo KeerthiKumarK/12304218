@@ -1,4 +1,4 @@
-// src/components/StatsTable.jsx
+ 
 import React from 'react';
 import {
   Accordion, AccordionSummary, AccordionDetails,

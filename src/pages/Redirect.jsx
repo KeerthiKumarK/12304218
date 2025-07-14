@@ -1,4 +1,3 @@
-// src/pages/Redirect.jsx
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { findByShortcode, updateShortUrl } from '../utils/storage';
@@ -30,4 +29,3 @@ export default function Redirect() {
   return <p>Redirecting...</p>;
 }
 
- 

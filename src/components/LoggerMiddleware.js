@@ -1,4 +1,4 @@
-// src/components/LoggerMiddleware.js
+ 
 const Logger = {
   logs: [],
   log(message, context = {}) {

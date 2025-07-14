@@ -1,4 +1,4 @@
-// src/components/ShortenedUrlCard.jsx
+ 
 import React from 'react';
 import { Card, CardContent, Typography, Link } from '@mui/material';
 
